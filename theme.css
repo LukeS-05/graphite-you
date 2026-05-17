@@ -1,34 +1,383 @@
 body {
-	--radius-s: 0px;
-	--radius-m: 0px;
-	--radius-l: 0px;
-	--input-radius: 0px;
-	--tab-radius-active: 0px;
-	--checkbox-radius: 0px;
-	--toggle-radius: 0px;
-	--toggle-thumb-radius: 0px;
-	--slider-thumb-radius: 0px;
+  --titlebar-background-focused: var(--color-base-10);
+  /* radii */
+	--radius-s: 4px;
+	--radius-m: 6px;
+	--radius-l: 8px;
+	--input-radius: 10px;
+	--tab-radius-active: 10px;
+	--checkbox-radius: 10px;
+	--slider-thumb-radius: 10px;
+	
+  /* readable line width */
+	--file-line-width: 650px;
+	/* modals, input, buttons */
+	--modal-border-width: 1px;
+	--modal-border-color: var(--color-base-30);
+	--modal-background: var(--color-base-05);
+  --modal-radius: 12px;
+  --button-radius: 8px;
+  /* prompts*/
+	--prompt-border-color: var(--color-base-25);
+  /* ribbon */
+	--ribbon-width: 50px;
+	--ribbon-background-collapsed: var(--background-secondary);
+  /* tabs */
+	--tab-outline-color: var(--color-base-25);
+	--tab-background-active: var(--background-secondary);  
+	--tab-curve: 0px;
+	--tab-divider-color: var(--color-base-30);
+  --tab-radius-active: 10px 10px 0 0;
+	--tab-font-weight: 500;
+  /* properties panel */
+	--metadata-background: var(--color-base-10);
+	--metadata-border-radius: 8px;
+	--metadata-border-width: 2px;
+	--metadata-padding: 12px;
+	--metadata-border-color: var(--color-base-25);
+	--metadata-input-height: 32px;
+  /* toggles */
+	--toggle-thumb-color: var(--background-secondary);
+  --toggle-radius: 10px;
+	--toggle-thumb-radius: 10px;
+	/* status bar */
+	--status-bar-radius: 6px;
+	--status-bar-border-width: 0px;
+  /* link */
+	--link-weight: 600;
+  /* graph */
+  --graph-node: var(--color-accent-2);
+  --graph-node-focused: var(--color-accent);
+  /* tag */
+  --tag-radius: 4px;
 }
 
-.workspace-tab-header.is-active::before, .workspace-tab-header.is-active::after {
-	display: none;
+/* theme and inline title */
+.theme-dark {
+  --color-base-00: #1a1a1a;
+  --color-base-05: #1f1f1f;
+  --color-base-10: #252525;
+  --color-base-20: #2d2d2d;
+  --color-base-25: #343434;
+  --color-base-30: #3d3d3d;
+  --color-base-35: #494949;
+  --color-base-40: #575757;
+  --color-base-50: #757575;
+  --color-base-60: #9a9a9a;
+  --color-base-70: #bebebe;
+  --color-base-100: #f2f2f2;
+
+  --background-primary: #1e1e1e;
+  --background-primary-alt: #1f1f1f;
+
+  --background-secondary: #252525;
+  --background-secondary-alt: #2d2d2d;
+
+  --background-modifier-hover: rgba(255, 255, 255, 0.05);
+  --background-modifier-active-hover: rgba(255, 255, 255, 0.08);
+
+  --background-modifier-border: #383838;
+  --background-modifier-border-hover: #505050;
+
+  --background-modifier-form-field: #212121;
+  --background-modifier-box-shadow: rgba(0, 0, 0, 0.28);
+
+  --text-normal: #dddddd;
+  --text-muted: #a8a8a8;
+  --text-faint: #808080;
+
+  --text-accent: #c8c8c8;
+  --text-accent-hover: #ebebeb;
+
+  --text-on-accent: #1a1a1a;
+  --nav-item-padding: 6px var(--size-4-2) 6px var(--size-4-6);
+  --nav-item-radius: 6px;
+
+  --link-color: var(--color-accent-2);
 }
 
-svg * {
-	stroke-linecap: square;
-	stroke-linejoin: miter;
-	rx: 0;
-	ry: 0;
+.inline-title {
+
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--color-base-20);
+  color: var(--color-accent-2);
+  text-align: center;
+}
+
+/* Status bar*/
+
+.status-bar {
+  bottom: 10px;
+  right: 10px;
+  width: max-content;
+  max-width: 90vw;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  border-width: 1px;
+  border-color: var(--color-base-25);
+  padding: 7px;
+  
+  background-color: var(--color-base-10);
+}
+
+
+/* Nav panel*/
+
+
+.nav-buttons-container {
+  gap: 3px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  justify-content: left;
+  margin-left: 12px;
+}
+
+.nav-file-title,
+.nav-folder-title {
+  font-weight: 500;
+  --nav-item-weight-hover: 500;
+  --nav-item-color-hover: var(--color-accent-2);
+  --nav-item-weight-active: 500;
+  --nav-item-color-active: var(--color-accent-2);
+}
+
+
+/* sidebars and workspace */
+
+.sidebar-toggle-button.mod-left{
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: var(--color-base-25);
+}
+.workspace-leaf-resize-handle {
+  border-color: var(--color-base-25);
+}
+
+.workspace-tab-header-container-inner {
+  margin-top: 2px;
+}
+
+.workspace-x {
+  border-color: var(--color-base-25);
+  padding-bottom: 8px;
+}
+
+.side-dock-actions {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  border-right-color: var(--color-base-25);
+}
+
+.workspace-ribbon.side-dock-ribbon.mod-left {
+  border-right-color: var(--color-base-25);
+}
+
+/* properties panel*/
+
+.metadata-container {
+  margin-left: 4.5px;
+  margin-right: -4.5px;
+  margin-bottom: 16px;
+}
+
+
+/* modals, prompts, dropdowns, tooltips */
+
+.modal-container.mod-dim .modal-bg {
+  background-color: var(--background-primary);
+}
+
+.modal,
+.prompt,
+.suggestion-container,
+.dropdown,
+button {
+  box-shadow: none !important;
+  background-color: var(--color-base-10);
+}
+
+.dropdown {
+  border-radius: 8px;
 }
 
 .menu {
-	padding: var(--size-2-1);
+  border-radius: 8px;
+  box-shadow: unset;
+  background-color: var(--color-base-20);
 }
 
-.menu-item {
-	padding: var(--size-4-1) var(--size-4-2);
+.menu-item.tappable {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  border-radius: 4px;
 }
 
-.menu-separator {
-	margin: var(--size-2-1) calc(var(--size-2-1) * -1);
+.tooltip {
+  background-color: var(--color-base-10);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  border-color: var(--color-base-25);
+  box-shadow: none;
+  text-align: left;
+  padding: 8px;
+}
+
+.tooltip-arrow {
+  visibility: hidden;
+}
+
+
+/* settings modal */
+
+.modal.mod-settings .vertical-tab-nav-item-icon {
+  padding: 3px;
+}
+
+.modal.mod-settings .vertical-tab-nav-item.tappable {
+  align-items: center;
+  border-radius: 6px;
+}
+
+.vertical-tab-header-group {
+  padding-bottom: 0px;
+}
+
+
+/* search */
+
+.search-params {
+  background-color: var(--color-base-20);
+  border-radius: 16px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid var(--color-base-30);
+}
+
+
+/* icon link styles */
+
+.cm-hmd-internal-link .cm-underline,
+.internal-link {
+  text-underline-offset: 2px;
+}
+
+.markdown-rendered img {
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+
+/* new tab page */
+
+.empty-state-action-list {
+  text-align: left;
+  font-size: 16px;
+}
+
+
+
+.empty-state-action.tappable {
+  background-color: var(--color-base-10);
+  border-radius: 12px;
+  border: solid var(--color-base-20) 1px;
+  padding: 14px;
+  margin-bottom: 8px;
+  color: var(--color-base-80);
+  font-weight: 500;
+}
+
+.empty-state-action.tappable:hover {
+  background-color: var(--color-base-20);
+}
+
+
+
+/* tables */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+
+.markdown-rendered th,
+.markdown-rendered td {
+  padding: 0.6em;
+}
+
+
+.markdown-rendered th,
+.markdown-rendered td {
+  padding: 0.6em;
+  padding-left: 1em;
+  word-wrap: break-word;  /* Prevents overflow if content is too long */
+}
+
+
+/* canvas */
+
+svg.canvas-background circle {
+  display: none;
+}
+
+.canvas-node-container {
+  border-radius: 12px;
+}
+
+.mod-readonly .canvas-node-content-blocker {
+  display: none;
+}
+
+
+/* Bases */
+
+.bases-table .bases-td .internal-link {
+  font-weight: 500;
+}
+
+.bases-table .bases-group-heading {
+  background-color: var(--color-base-10);
+}
+
+.bases-cards-item {
+  border-radius: 8px;
+  border: solid var(--color-base-25) 1px;
+  box-shadow: none;
+  background-color: var(--color-base-10);
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.bases-cards-item:hover {
+  background-color: var(--color-base-20);
+}
+
+.bases-cards-property.mod-title {
+  font-weight: 600;
+  color: var(--color-accent-2);
+
+}
+
+/* Workspace */
+
+.workspace-leaf.mod-active .workspace-leaf-content .view-content {
+    border-radius: 12px;
+}
+
+.workspace-leaf.mod-active, .view-header {
+  background-color: var(--background-secondary) !important;
+}
+
+.bases-group-value .metadata-input.metadata-input-text.mod-date {
+  background-color: transparent;
 }
