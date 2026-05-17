@@ -8,9 +8,6 @@ body {
 	--tab-radius-active: 10px;
 	--checkbox-radius: 10px;
 	--slider-thumb-radius: 10px;
-	
-  /* readable line width */
-	--file-line-width: 650px;
 	/* modals, input, buttons */
 	--modal-border-width: 1px;
 	--modal-border-color: var(--color-base-30);
@@ -50,6 +47,8 @@ body {
   --graph-node-focused: var(--color-accent);
   /* tag */
   --tag-radius: 4px;
+  /* settings */
+  --setting-items-background: var(--color-base-10);
 }
 
 /* theme and inline title */
@@ -97,7 +96,6 @@ body {
 }
 
 .inline-title {
-
   margin-bottom: 16px;
   padding-bottom: 14px;
   border-bottom: 2px solid var(--color-base-20);
@@ -147,12 +145,6 @@ body {
 
 
 /* sidebars and workspace */
-
-.sidebar-toggle-button.mod-left{
-    border-right-width: 1px;
-    border-right-style: solid;
-    border-right-color: var(--color-base-25);
-}
 .workspace-leaf-resize-handle {
   border-color: var(--color-base-25);
 }
@@ -199,7 +191,7 @@ body {
 .dropdown,
 button {
   box-shadow: none !important;
-  background-color: var(--color-base-10);
+  background-color: var(--color-base-20);
 }
 
 .dropdown {
@@ -248,6 +240,7 @@ button {
 .vertical-tab-header-group {
   padding-bottom: 0px;
 }
+
 
 
 /* search */
