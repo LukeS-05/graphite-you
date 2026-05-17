@@ -49,6 +49,9 @@ body {
   --tag-radius: 4px;
   /* settings */
   --setting-items-background: var(--color-base-10);
+  /* navigation */
+  --nav-item-padding: 6px var(--size-4-2) 6px var(--size-4-6);
+  --nav-item-radius: 6px;
 }
 
 /* theme and inline title */
@@ -59,7 +62,6 @@ body {
   --color-base-20: #2d2d2d;
   --color-base-25: #343434;
   --color-base-30: #3d3d3d;
-  --color-base-35: #494949;
   --color-base-40: #575757;
   --color-base-50: #757575;
   --color-base-60: #9a9a9a;
@@ -89,8 +91,7 @@ body {
   --text-accent-hover: #ebebeb;
 
   --text-on-accent: #1a1a1a;
-  --nav-item-padding: 6px var(--size-4-2) 6px var(--size-4-6);
-  --nav-item-radius: 6px;
+
 
   --link-color: var(--color-accent-2);
 }
