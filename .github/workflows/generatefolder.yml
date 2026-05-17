@@ -4,6 +4,7 @@ name: Generate download folder to easily import.
 
 # Controls when the workflow will run
 on:
+   workflow_dispatch:
    release:
     types: [published]
 
