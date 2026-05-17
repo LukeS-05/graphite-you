@@ -2,5 +2,6 @@
 README.md export-ignore
 .gitignore export-ignore
 .gitattributes export-ignore
+manifest.json export-ignore
 
 images/ export-ignore
