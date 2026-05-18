@@ -52,6 +52,9 @@ body {
   /* navigation */
   --nav-item-padding: 6px var(--size-4-2) 6px var(--size-4-6);
   --nav-item-radius: 6px;
+  /* callouts */
+  --callout-radius: 8px;
+  --callout-border-width: 2px;
 }
 
 /* theme and inline title */
@@ -87,15 +90,28 @@ body {
   --text-muted: #a8a8a8;
   --text-faint: #808080;
 
-  --text-accent: #c8c8c8;
-  --text-accent-hover: #ebebeb;
-
-  --text-on-accent: #1a1a1a;
-
 
   --link-color: var(--color-accent-2);
 }
 
+/* callouts */
+
+.callout {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.callout:hover {
+  filter: brightness(1.15);
+}
+
+.callout .callout-fold {
+  margin-left: auto;
+}
+
+.callout .callout-icon {
+  margin-right: 4px;
+}
 .inline-title {
   margin-bottom: 16px;
   padding-bottom: 14px;
